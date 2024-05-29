@@ -1,5 +1,5 @@
 // components
-import WorkSlider from '../../components/WorkSlider';
+import ServiceSlider from '../../components/ServiceSlider';
 import Bulb from '../../components/Bulb';
 import Circles from '../../components/Circles';
 
@@ -7,7 +7,7 @@ import Circles from '../../components/Circles';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 
-const Work = () => {
+const Services = () => {
   return (
     <div className='h-full bg-primary/30 py-36 flex items-center'>
       <Circles />
@@ -20,9 +20,9 @@ const Work = () => {
               initial='hidden'
               animate='show'
               exit='hidden'
-              className='h2 xl:mt-12'
+              className='h2 xl:mt-8'
             >
-              My work <span className='text-accent'>.</span>
+              My Work Experience <span className='text-accent'>.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn('up', 0.4)}
@@ -31,8 +31,8 @@ const Work = () => {
               exit='hidden'
               className='mb-4 max-w-[400px] mx-auto lg:mx-0'
             >
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. A
-              eveniet dignissimos distinctio tempore harum laudantium.
+              Here you can find all the work I did during various job roles ranging from Intern to Graduate Assistant
+              to Associate Software Engineer. Click to find more details.
             </motion.p>
           </div>
 
@@ -44,7 +44,7 @@ const Work = () => {
             exit='hidden'
             className='w-full xl:max-w-[65%]'
           >
-            <WorkSlider />
+            <ServiceSlider />
           </motion.div>
         </div>
       </div>
@@ -53,4 +53,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default Services;
