@@ -5,55 +5,37 @@ export const workSlider = {
       images: [
         {
           title: 'title',
-          path: '/thumb1.jpg',
+          path: '/health.jpg',
+          url: 'https://github.com/216aditya4565/Snowflake-Health-Care_Analytics-AWS',
         },
         {
           title: 'title',
-          path: '/thumb2.jpg',
+          path: '/loan.png',
+          url: 'https://github.com/216aditya4565/Loan-Default-Prediction',
         },
         {
           title: 'title',
-          path: '/thumb3.jpg',
+          path: '/churn.png',
+          url: 'https://github.com/216aditya4565/Bank-Customer-Churn',
         },
         {
           title: 'title',
-          path: '/thumb4.jpg',
-        },
-      ],
-    },
-    {
-      images: [
-        {
-          title: 'title',
-          path: '/thumb4.jpg',
-        },
-        {
-          title: 'title',
-          path: '/thumb1.jpg',
-        },
-        {
-          title: 'title',
-          path: '/thumb2.jpg',
-        },
-        {
-          title: 'title',
-          path: '/thumb3.jpg',
+          path: '/crowd.png',
+          url: 'https://github.com/216aditya4565/CrowdDynamics',
         },
       ],
     },
   ],
 };
-
 // import swiper react components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // import swiper styles
 import 'swiper/css';
 import 'swiper/css/free-mode';
-import 'swiper/css/pagination';
 
 // import required modules
-import { Pagination } from 'swiper';
+import { FreeMode } from 'swiper';
 
 // icons
 import { BsArrowRight } from 'react-icons/bs';
@@ -64,25 +46,26 @@ const WorkSlider = () => {
   return (
     <Swiper
       spaceBetween={10}
-      pagination={{
-        clickable: true,
-      }}
-      modules={[Pagination]}
+      freeMode={true}
+      modules={[FreeMode]}
       className='h-[280px] sm:h-[480px]'
     >
-      {workSlider.slides.map((slide, index) => {
+      {workSlider.slides.map((slide, slideIndex) => {
         return (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={slideIndex}>
             <div className='grid grid-cols-2 grid-rows-2 gap-4 cursor-pointer'>
-              {slide.images.map((image, index) => {
+              {slide.images.map((image, imageIndex) => {
                 return (
-                  <div
+                  <a
+                    href={image.url} // Use the URL here
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    key={imageIndex}
                     className='relative rounded-lg overflow-hidden flex items-center justify-center group'
-                    key={index}
                   >
                     <div className='flex items-center justify-center relative overflow-hidden group'>
                       {/* image */}
-                      <Image src={image.path} width={500} height={300} alt='' />
+                      <Image src={image.path} width={500} height={300} alt={image.title} />
                       {/* overlay gradient */}
                       <div className='absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700'></div>
                       {/* title */}
@@ -101,7 +84,7 @@ const WorkSlider = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 );
               })}
             </div>
