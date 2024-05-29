@@ -1,96 +1,75 @@
 import React, { useState } from 'react';
+import { Link, Element } from 'react-scroll';
 
-// icons
-import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaWordpress,
-  FaFigma,
-} from 'react-icons/fa';
-
-import {
-  SiNextdotjs,
-  SiFramer,
-  SiAdobexd,
-  SiAdobephotoshop,
-} from 'react-icons/si';
-
-//  about data
+// about data
 export const aboutData = [
   {
-    title: 'skills',
+    id: 'skills',
+    title: 'skills and experience',
     info: [
       {
-        title: 'Web Development',
-        icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
+        title: 'Programming Languages',
+        items: [
+          'Python',
+          'Java',
+          'C',
+          'JavaScript',
+          'Microsoft SQL Server',
+          'React JS',
+          'jQuery',
+          'AJAX',
+          'XML',
+          'JSON',
+          'Bash Scripts',
         ],
       },
       {
-        title: 'UI/UX Design',
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
-      },
-    ],
-  },
-  {
-    title: 'awards',
-    info: [
-      {
-        title: 'Webby Awards - Honoree',
-        stage: '2011 - 2012',
-      },
-      {
-        title: 'Adobe Design Achievement Awards - Finalist',
-        stage: '2009 - 2010',
-      },
-    ],
-  },
-  {
-    title: 'experience',
-    info: [
-      {
-        title: 'UX/UI Designer - XYZ Company',
-        stage: '2012 - 2023',
+        title: 'Tools',
+        items: [
+          'Anaconda',
+          'GitHub',
+          'Tableau',
+          'Amazon AWS',
+          'Microsoft SQL Server Management Studio',
+          'JIRA',
+          'Visual Studio Code',
+        ],
       },
       {
-        title: 'Web Developer - ABC Agency',
-        stage: '2010 - 2012',
+        title: 'Skills',
+        items: [
+          'Data Structures & Algorithms',
+          'Object Oriented Programming',
+          'Machine Learning',
+          'Data Mining',
+          'Data Analysis',
+          'CSS',
+          'HTML',
+          'PHP',
+          'jQuery',
+          'Flask',
+          'AJAX',
+          'MySQL',
+          'DevOps',
+          'Microsoft Office',
+        ],
       },
       {
-        title: 'Intern - DEF Corporation',
-        stage: '2008 - 2010',
-      },
-    ],
-  },
-  {
-    title: 'credentials',
-    info: [
-      {
-        title: 'Web Development - ABC University, LA, CA',
-        stage: '2011',
-      },
-      {
-        title: 'Computer Science Diploma - AV Technical Institute',
-        stage: '2009',
-      },
-      {
-        title: 'Certified Graphic Designer - ABC Institute, Los Angeles, CA',
-        stage: '2006',
+        title: 'Relevant Coursework',
+        items: [
+          'Software Engineering',
+          'Machine Learning',
+          'Malware and Software Vulnerability Analysis',
+          'Natural Language Processing',
+          'Data Structures and Algorithms',
+          'Cyber Security',
+        ],
       },
     ],
   },
 ];
 
 // components
-import Avatar from '../../components/Avatar';
 import Circles from '../../components/Circles';
 
 // framer motion
@@ -106,16 +85,6 @@ const About = () => {
   return (
     <div className='h-full bg-primary/30 py-32 text-center xl:text-left'>
       <Circles />
-      {/* avatar img */}
-      <motion.div
-        variants={fadeIn('right', 0.2)}
-        initial='hidden'
-        animate='show'
-        exit='hidden'
-        className='hidden xl:flex absolute bottom-0 -left-[370px]'
-      >
-        <Avatar />
-      </motion.div>
       <div className='container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'>
         {/* text */}
         <div className='flex-1 flex flex-col justify-center'>
@@ -126,8 +95,7 @@ const About = () => {
             exit='hidden'
             className='h2'
           >
-            Captivating <span className='text-accent'>stories</span> birth
-            magnificent designs.
+            Everything <span className='text-accent'>Technical About</span> me
           </motion.h2>
           <motion.p
             variants={fadeIn('right', 0.4)}
@@ -136,9 +104,8 @@ const About = () => {
             exit='hidden'
             className='max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0'
           >
-            10 years ago, I began freelancing as a developer. Since then, I've
-            done remote work for agencies, counsulted for startups, and
-            collaborated on digital products for business and consumer use.
+            I've honed my skills in Python, SQL, machine learning, Power BI, Tableau and data engineering through hands-on projects and internships. 
+            Driven by curiosity and a strong work ethic, I'm dedicated to pushing data's potential. Whether analyzing complex datasets, engineering robust solutions, or exploring new tech, I'm always ready to make a meaningful impact. 
           </motion.p>
           {/* counters */}
           <motion.div
@@ -152,7 +119,7 @@ const About = () => {
               {/* experience */}
               <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={10} duration={5} /> +
+                  <CountUp start={0} end={2} duration={5} /> +
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
                   Years of experience
@@ -161,7 +128,7 @@ const About = () => {
               {/* clients */}
               <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={250} duration={5} /> +
+                  <CountUp start={0} end={5} duration={5} /> +
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
                   Satisfied clients
@@ -170,7 +137,7 @@ const About = () => {
               {/* projects */}
               <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={650} duration={5} /> +
+                  <CountUp start={0} end={6} duration={5} /> +
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
                   Finished projects
@@ -179,10 +146,10 @@ const About = () => {
               {/* awards */}
               <div className='relative flex-1'>
                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                  <CountUp start={0} end={8} duration={5} /> +
+                  <CountUp start={0} end={2} duration={5} /> 
                 </div>
                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
-                  Winning awards
+                  Individual Brilliance Awards from Merkle USA
                 </div>
               </div>
             </div>
@@ -199,8 +166,11 @@ const About = () => {
           <div className='flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4'>
             {aboutData.map((item, itemIndex) => {
               return (
-                <div
-                  key={itemIndex}
+                <Link
+                  key={item.id}
+                  to={item.id}
+                  smooth={true}
+                  duration={500}
                   className={`${
                     index === itemIndex &&
                     'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'
@@ -208,28 +178,30 @@ const About = () => {
                   onClick={() => setIndex(itemIndex)}
                 >
                   {item.title}
-                </div>
+                </Link>
               );
             })}
           </div>
           <div className='py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start'>
             {aboutData[index].info.map((item, itemIndex) => {
               return (
-                <div
+                <Element
                   key={itemIndex}
+                  id={item.id}
+                  name={item.id}
                   className='flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60'
                 >
                   {/* title */}
                   <div className='font-light mb-2 md:mb-0'>{item.title}</div>
                   <div className='hidden md:flex'>-</div>
                   <div>{item.stage}</div>
-                  <div className='flex gap-x-4'>
-                    {/* icons */}
-                    {item.icons?.map((icon, itemIndex) => {
-                      return <div className='text-2xl text-white'>{icon}</div>;
+                  <div className='flex flex-wrap gap-x-4 gap-y-2'>
+                    {/* items */}
+                    {item.items?.map((itemName, itemIndex) => {
+                      return <div key={itemIndex} className='text-base text-white'>{itemName}</div>;
                     })}
                   </div>
-                </div>
+                </Element>
               );
             })}
           </div>
