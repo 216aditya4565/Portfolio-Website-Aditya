@@ -1,3 +1,4 @@
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,9 +6,9 @@
 .translate-z-0 {
   transform: translateZ(0px);
 }
+
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets
-  .swiper-pagination-bullet {
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
   background-color: #f13024;
 }
 
@@ -16,6 +17,10 @@
 .swiper-button-next:after,
 .swiper-rtl .swiper-button-prev:after {
   color: #f13024;
+}
+
+.custom-swiper-pagination {
+  bottom: 20px !important; /* Adjust this value to position the pagination dots */
 }
 
 @layer base {
