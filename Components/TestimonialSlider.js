@@ -1,42 +1,35 @@
 // testimonial slider data
 export const testimonialSlider = [
   {
-    image: '/t-avt-1.png',
-    name: 'Anne Smith',
-    position: 'Customer',
+    image: '/stripathi.png',
+    name: 'Sanjay Tripathi',
+    position: 'Senior Manager',
     message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+      'Aditya has passion for any kind of computer science related work. His performance while working with my team is quite commendable and I would say it has been extra ordinary. The passion that he has for his chosen field, in fact, extends to other related endeavors. For instance, in conducting research, he can pinpoint a particular problem and then creatively look for proposed solutions for those problems. He has always come to me with solution of the issues whenever it has been reported directly or indirectly to him. Judging by his outstanding performance, I am convinced that Aditya has all technical knowledge, the proper work ethic, and the right attitude for any organization, and he will do the great job for his assigned work.'
   },
   {
-    image: '/t-avt-2.png',
-    name: 'Jane Doe',
-    position: 'Customer',
+    image: '/sn.png',
+    name: 'Shailesh Nerurkar',
+    position: 'Manager',
     message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+      'Aditya was part of our Level2/ Tier 2 Data Operations team working mainly on Retail projects for US team. He is a fast learner and within a short duration, he started working independently on projects. Considering he was fresher out of college, understanding and grasping Tier 2 complex work was commendable. He also received positive feedback from our US clients for his outstanding work.'
   },
   {
-    image: '/t-avt-3.png',
-    name: 'Jhon Doe',
-    position: 'Customer',
+    image: '/jim_geist.png',
+    name: 'Jim Geist',
+    position: 'PhD in Computer Science at UCF',
     message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+      'I worked with Aditya as a TA in UCF\'s Computer Science 1 class, for which I was the head TA. Aditya is a very conscientious worker. The class had 9 TA\'s, and he was almost always the first to jump on and complete assigned tasks. He also cares greatly about the quality of his work and is a great communicator. I would definitely enjoy working with him again.'
   },
 ];
 
 // import swiper react components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// import swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
-// import required modules
 import { Navigation, Pagination } from 'swiper';
-
-// icons
 import { FaQuoteLeft } from 'react-icons/fa';
-// next image
 import Image from 'next/image';
 
 const TestimonialSlider = () => {
@@ -45,6 +38,7 @@ const TestimonialSlider = () => {
       navigation={true}
       pagination={{
         clickable: true,
+        el: '.custom-swiper-pagination', // Using the custom class here
       }}
       modules={[Navigation, Pagination]}
       className='h-[400px]'
@@ -83,6 +77,7 @@ const TestimonialSlider = () => {
           </SwiperSlide>
         );
       })}
+      <div className='custom-swiper-pagination'></div> {/* Applying the custom class here */}
     </Swiper>
   );
 };
